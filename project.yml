@@ -1,0 +1,94 @@
+name: HealthFitness
+options:
+  bundleIdPrefix: com.binoy.healthfitness
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MARKETING_VERSION: "1.8.0"
+    CURRENT_PROJECT_VERSION: "1"
+    DEVELOPMENT_TEAM: "${TEAM_ID}"
+    CODE_SIGN_STYLE: Automatic
+    ENABLE_HARDENED_RUNTIME: YES
+targets:
+  HealthFitness:
+    type: application
+    platform: macOS
+    sources: [App, Shared, Assets.xcassets]
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: Health and Fitness
+        CFBundleName: Health and Fitness
+        NSHumanReadableCopyright: © 2026 Binoy Shah
+        LSApplicationCategoryType: public.app-category.healthcare-fitness
+        NSCalendarsFullAccessUsageDescription: Reads the run events the dashboard puts in your calendar, so the app shows your next workout and this week's plan.
+        NSCalendarsUsageDescription: Reads the run events the dashboard puts in your calendar, so the app shows your next workout and this week's plan.
+        AppGroupID: $(TeamIdentifierPrefix)healthfitness
+        KeychainGroup: $(AppIdentifierPrefix)com.binoy.healthfitness.shared
+        CFBundleURLTypes:
+          - CFBundleURLName: com.binoy.healthfitness.oauth
+            CFBundleURLSchemes: [healthfitness]
+    entitlements:
+      path: App/HealthFitness.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.network.client: true
+        com.apple.security.network.server: true
+        com.apple.security.personal-information.calendars: true
+        com.apple.security.application-groups: ["$(TeamIdentifierPrefix)healthfitness"]
+        keychain-access-groups: ["$(AppIdentifierPrefix)com.binoy.healthfitness.shared"]
+    dependencies:
+      - target: HealthFitnessWidgets
+        embed: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.binoy.healthfitness
+        PRODUCT_NAME: Health and Fitness
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+  HealthFitnessWidgets:
+    type: app-extension
+    platform: macOS
+    sources: [Widgets, Shared]
+    info:
+      path: Widgets/Info.plist
+      properties:
+        CFBundleDisplayName: Health and Fitness
+        AppGroupID: $(TeamIdentifierPrefix)healthfitness
+        KeychainGroup: $(AppIdentifierPrefix)com.binoy.healthfitness.shared
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    entitlements:
+      path: Widgets/HealthFitnessWidgets.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.network.client: true
+        com.apple.security.application-groups: ["$(TeamIdentifierPrefix)healthfitness"]
+        keychain-access-groups: ["$(AppIdentifierPrefix)com.binoy.healthfitness.shared"]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.binoy.healthfitness.widgets
+        PRODUCT_NAME: HealthFitnessWidgets
+        SKIP_INSTALL: YES
+  HealthFitnessTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - Tests
+      - Shared
+      - App/RecoveryModel.swift
+      - App/Resources/recovery_library.json
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.binoy.healthfitness.tests
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  HealthFitness:
+    build:
+      targets:
+        HealthFitness: all
+        HealthFitnessWidgets: all
+    test:
+      targets: [HealthFitnessTests]

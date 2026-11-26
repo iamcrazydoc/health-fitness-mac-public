@@ -1,0 +1,851 @@
+{
+ "version": 1,
+ "built": "2026-11-26",
+ "refs": [
+  {
+   "pmid": "34722783",
+   "authors": "Habets B et al.",
+   "title": "No difference in clinical effects when comparing Alfredson eccentric and Silbernagel combined concentric-eccentric loading in Achilles tendinopathy: a randomized controlled trial",
+   "journal": "Orthop J Sports Med",
+   "year": 2021,
+   "doi": "10.1177/23259671211031254",
+   "type": "RCT"
+  },
+  {
+   "pmid": "17307888",
+   "authors": "Silbernagel KG et al.",
+   "title": "Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy: a randomized controlled study",
+   "journal": "Am J Sports Med",
+   "year": 2007,
+   "doi": "10.1177/0363546506298279",
+   "type": "RCT"
+  },
+  {
+   "pmid": "36538166",
+   "authors": "Radovanović G et al.",
+   "title": "Evidence-based high-loading tendon exercise for 12 weeks leads to increased tendon stiffness and cross-sectional area in Achilles tendinopathy: a controlled clinical trial",
+   "journal": "Sports Med Open",
+   "year": 2022,
+   "doi": "10.1186/s40798-022-00545-5",
+   "type": "Controlled trial"
+  },
+  {
+   "pmid": "39401870",
+   "authors": "Neal BS et al.",
+   "title": "Best practice guide for patellofemoral pain based on synthesis of a systematic review, the patient voice and expert clinical reasoning",
+   "journal": "Br J Sports Med",
+   "year": 2024,
+   "doi": "10.1136/bjsports-2024-108110",
+   "type": "Systematic review + guide"
+  },
+  {
+   "pmid": "29034800",
+   "authors": "Nascimento LR et al.",
+   "title": "Hip and knee strengthening is more effective than knee strengthening alone for reducing pain and improving activity in individuals with patellofemoral pain: a systematic review with meta-analysis",
+   "journal": "J Orthop Sports Phys Ther",
+   "year": 2018,
+   "doi": "10.2519/jospt.2018.7365",
+   "type": "Meta-analysis"
+  },
+  {
+   "pmid": "25603546",
+   "authors": "van der Heijden RA et al.",
+   "title": "Exercise for treating patellofemoral pain syndrome",
+   "journal": "Cochrane Database Syst Rev",
+   "year": 2015,
+   "doi": "10.1002/14651858.CD010387.pub2",
+   "type": "Cochrane review"
+  },
+  {
+   "pmid": "25145882",
+   "authors": "Rathleff MS et al.",
+   "title": "High-load strength training improves outcome in patients with plantar fasciitis: a randomized controlled trial with 12-month follow-up",
+   "journal": "Scand J Med Sci Sports",
+   "year": 2015,
+   "doi": "10.1111/sms.12313",
+   "type": "RCT"
+  },
+  {
+   "pmid": "23979968",
+   "authors": "Winters M et al.",
+   "title": "Treatment of medial tibial stress syndrome: a systematic review",
+   "journal": "Sports Med",
+   "year": 2013,
+   "doi": "10.1007/s40279-013-0087-0",
+   "type": "Systematic review"
+  },
+  {
+   "pmid": "33066291",
+   "authors": "Menéndez C et al.",
+   "title": "Medial tibial stress syndrome in novice and recreational runners: a systematic review",
+   "journal": "Int J Environ Res Public Health",
+   "year": 2020,
+   "doi": "10.3390/ijerph17207457",
+   "type": "Systematic review"
+  },
+  {
+   "pmid": "39141251",
+   "authors": "George ERM et al.",
+   "title": "Criteria and guidelines for returning to running following a tibial bone stress injury: a scoping review",
+   "journal": "Sports Med",
+   "year": 2024,
+   "doi": "10.1007/s40279-024-02051-y",
+   "type": "Scoping review"
+  },
+  {
+   "pmid": "33635519",
+   "authors": "Warden SJ et al.",
+   "title": "Preventing bone stress injuries in runners with optimal workload",
+   "journal": "Curr Osteoporos Rep",
+   "year": 2021,
+   "doi": "10.1007/s11914-021-00666-y",
+   "type": "Review"
+  },
+  {
+   "pmid": "30808663",
+   "authors": "van Dyk N et al.",
+   "title": "Including the Nordic hamstring exercise in injury prevention programmes halves the rate of hamstring injuries: a systematic review and meta-analysis of 8459 athletes",
+   "journal": "Br J Sports Med",
+   "year": 2019,
+   "doi": "10.1136/bjsports-2018-100045",
+   "type": "Meta-analysis"
+  },
+  {
+   "pmid": "39247485",
+   "authors": "Sanchez-Alvarado A et al.",
+   "title": "Effects of conservative treatment strategies for iliotibial band syndrome on pain and function in runners: a systematic review",
+   "journal": "Front Sports Act Living",
+   "year": 2024,
+   "doi": "10.3389/fspor.2024.1386456",
+   "type": "Systematic review"
+  },
+  {
+   "pmid": "10959926",
+   "authors": "Fredericson M et al.",
+   "title": "Hip abductor weakness in distance runners with iliotibial band syndrome",
+   "journal": "Clin J Sport Med",
+   "year": 2000,
+   "doi": "10.1097/00042752-200007000-00004",
+   "type": "Clinical study"
+  },
+  {
+   "pmid": "34580864",
+   "authors": "Hayden JA et al.",
+   "title": "Exercise therapy for chronic low back pain",
+   "journal": "Cochrane Database Syst Rev",
+   "year": 2021,
+   "doi": "10.1002/14651858.CD009790.pub2",
+   "type": "Cochrane review"
+  },
+  {
+   "pmid": "29755363",
+   "authors": "Dupuy O et al.",
+   "title": "An evidence-based approach for choosing post-exercise recovery techniques to reduce markers of muscle damage, soreness, fatigue, and inflammation: a systematic review with meta-analysis",
+   "journal": "Front Physiol",
+   "year": 2018,
+   "doi": "10.3389/fphys.2018.00403",
+   "type": "Meta-analysis"
+  },
+  {
+   "pmid": "39294614",
+   "authors": "Chen R et al.",
+   "title": "The effects of hydrotherapy and cryotherapy on recovery from acute post-exercise induced muscle damage: a network meta-analysis",
+   "journal": "BMC Musculoskelet Disord",
+   "year": 2024,
+   "doi": "10.1186/s12891-024-07315-2",
+   "type": "Network meta-analysis"
+  },
+  {
+   "pmid": "23536466",
+   "authors": "Askling CM et al.",
+   "title": "Acute hamstring injuries in Swedish elite football: a prospective randomised controlled clinical trial comparing two rehabilitation protocols",
+   "journal": "Br J Sports Med",
+   "year": 2013,
+   "doi": "10.1136/bjsports-2013-092165",
+   "type": "RCT"
+  },
+  {
+   "pmid": "29720374",
+   "authors": "Mellor R et al.",
+   "title": "Education plus exercise versus corticosteroid injection use versus a wait and see approach on global outcome and pain from gluteal tendinopathy: prospective, single blinded, randomised clinical trial",
+   "journal": "BMJ",
+   "year": 2018,
+   "doi": "10.1136/bmj.k1662",
+   "type": "RCT"
+  },
+  {
+   "pmid": "26174323",
+   "authors": "Roberts LA et al.",
+   "title": "Post-exercise cold water immersion attenuates acute anabolic signalling and long-term adaptations in muscle to strength training",
+   "journal": "J Physiol",
+   "year": 2015,
+   "doi": "10.1113/JP270570",
+   "type": "RCT"
+  }
+ ],
+ "parts": [
+  {
+   "id": "calf",
+   "name": "Calf / Achilles",
+   "symbol": "figure.walk",
+   "pubmed": "(achilles tendinopathy OR calf strain) AND (exercise OR rehabilitation OR loading)",
+   "summary": "Tendon and calf problems respond best to gradually heavier calf loading, not rest. You can usually keep running if pain stays at 5/10 or less during the run and is back to normal by the next morning.",
+   "run_rule": "Pain-monitoring rule: keep running if pain is 5/10 or less during and after, and settles by next morning. Otherwise cut the run or swap for the bike.",
+   "run_refs": [
+    "17307888"
+   ],
+   "exercises": [
+    {
+     "id": "calf-iso",
+     "name": "Calf raise hold",
+     "phase": "calm",
+     "dose": "5 × 30–45 s, daily",
+     "steps": [
+      "Stand on both feet, rise halfway onto your toes.",
+      "Hold still. Mild discomfort (up to 3/10) is fine.",
+      "Rest 1–2 min between holds."
+     ],
+     "refs": [
+      "17307888",
+      "34722783"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-calf-and-ankle-problems/",
+     "mediaTitle": "NHS inform: calf and ankle exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "calf-raise",
+     "name": "Heel raises (straight knee)",
+     "phase": "build",
+     "dose": "3 × 15, daily; progress two feet → one foot → with a backpack",
+     "steps": [
+      "Stand on a step edge holding a rail.",
+      "Rise up on both feet, lower slowly over 3 s.",
+      "Progress to one foot when 3 × 15 feels easy."
+     ],
+     "refs": [
+      "34722783",
+      "17307888"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-calf-and-ankle-problems/",
+     "mediaTitle": "NHS inform: calf and ankle exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "soleus",
+     "name": "Bent-knee heel raises (soleus)",
+     "phase": "build",
+     "dose": "3 × 15, daily",
+     "steps": [
+      "Same as heel raises but with knees bent about 30°.",
+      "Keep the knee bend constant the whole time."
+     ],
+     "refs": [
+      "34722783"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-calf-and-ankle-problems/",
+     "mediaTitle": "NHS inform: calf and ankle exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "alfredson",
+     "name": "Eccentric heel drops (Alfredson)",
+     "phase": "build",
+     "dose": "3 × 15 straight knee + 3 × 15 bent knee, twice a day for 12 weeks",
+     "steps": [
+      "Rise up on both feet on a step.",
+      "Shift to the sore leg and lower the heel below the step over 3 s.",
+      "Use the good leg to get back up."
+     ],
+     "refs": [
+      "34722783"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-calf-and-ankle-problems/",
+     "mediaTitle": "NHS inform: calf and ankle exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "heavy-calf",
+     "name": "Heavy loaded calf raise",
+     "phase": "return",
+     "dose": "4 × 6–8 slow reps, 3 days a week",
+     "steps": [
+      "Seated or standing calf machine, or a barbell/dumbbells.",
+      "3 s up, 3 s down, full range.",
+      "Add weight when 8 reps feel easy."
+     ],
+     "refs": [
+      "36538166"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-calf-and-ankle-problems/",
+     "mediaTitle": "NHS inform: calf and ankle exercises",
+     "symbol": "figure.strengthtraining.functional"
+    }
+   ]
+  },
+  {
+   "id": "shin",
+   "name": "Shin",
+   "symbol": "figure.run",
+   "pubmed": "(medial tibial stress syndrome OR shin splints OR tibial bone stress injury) AND (treatment OR rehabilitation)",
+   "summary": "Shin pain along the inner edge is usually medial tibial stress syndrome. The research on treatments is weak, so the plan is load management: fewer and easier miles, then a gradual walk-run return. Pain in one small spot on the bone that hurts to press, or pain when walking, may be a bone stress injury and needs a doctor.",
+   "run_rule": "Cut weekly miles, run on softer surfaces, and use walk-run intervals. Increase distance before speed. A slightly quicker cadence lowers bone load.",
+   "run_refs": [
+    "23979968",
+    "33635519",
+    "39141251",
+    "33066291"
+   ],
+   "redflag": "Pain in one spot on the bone that hurts to press, pain when walking, or pain at night: stop running and see a doctor to rule out a stress fracture.",
+   "redflag_refs": [
+    "39141251"
+   ],
+   "exercises": [
+    {
+     "id": "shin-calf",
+     "name": "Heel raises (straight and bent knee)",
+     "phase": "build",
+     "dose": "3 × 15 each, every other day",
+     "steps": [
+      "Stand on a step holding a rail.",
+      "Rise up, lower slowly over 3 s.",
+      "Do half with knees straight and half slightly bent."
+     ],
+     "refs": [
+      "33066291"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-calf-and-ankle-problems/",
+     "mediaTitle": "NHS inform: calf and ankle exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "walkrun",
+     "name": "Walk-run return",
+     "phase": "return",
+     "dose": "e.g. 5 × (1 min run + 1 min walk), every other day; add 1 min run per session if pain-free",
+     "steps": [
+      "Only start once walking is pain-free and the bone isn't tender to press.",
+      "Progress distance before speed."
+     ],
+     "refs": [
+      "39141251"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/how-to-reduce-your-risk-of-injury-from-exercise-or-physical-activity/",
+     "mediaTitle": "NHS inform: reducing injury risk",
+     "symbol": "figure.run"
+    }
+   ]
+  },
+  {
+   "id": "knee_front",
+   "name": "Knee (front / kneecap)",
+   "symbol": "figure.walk",
+   "pubmed": "patellofemoral pain AND (exercise OR rehabilitation)",
+   "summary": "Pain around or behind the kneecap. Exercise is the main treatment, and combining hip and knee strengthening works better than knee exercises alone.",
+   "run_rule": "Change your load rather than stopping completely. A common guide is to keep pain mild (about 3/10 or less) and not worse the next day. Flat routes help; hills and downhill running usually aggravate it.",
+   "run_refs": [
+    "39401870"
+   ],
+   "exercises": [
+    {
+     "id": "pf-clam",
+     "name": "Side-lying leg raise (hip abduction)",
+     "phase": "calm",
+     "dose": "3 × 15 each side, daily",
+     "steps": [
+      "Lie on your side, bottom knee bent.",
+      "Lift the top leg slightly behind you, toes pointing forward.",
+      "Lower slowly."
+     ],
+     "refs": [
+      "29034800",
+      "25603546"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-patellofemoral-knee-pain/",
+     "mediaTitle": "NHS inform: patellofemoral knee pain exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "pf-wallsit",
+     "name": "Wall sit (shallow)",
+     "phase": "calm",
+     "dose": "5 × 30–45 s",
+     "steps": [
+      "Back against a wall, slide down to a comfortable bend (not deeper than 60°).",
+      "Hold. Pain up to 3/10 is OK."
+     ],
+     "refs": [
+      "39401870"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-patellofemoral-knee-pain/",
+     "mediaTitle": "NHS inform: patellofemoral knee pain exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "pf-bridge",
+     "name": "Glute bridge",
+     "phase": "build",
+     "dose": "3 × 12, daily",
+     "steps": [
+      "Lie on your back, knees bent.",
+      "Squeeze glutes and lift hips, hold 2 s, lower."
+     ],
+     "refs": [
+      "29034800"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-patellofemoral-knee-pain/",
+     "mediaTitle": "NHS inform: patellofemoral knee pain exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "pf-stepdown",
+     "name": "Step-down",
+     "phase": "build",
+     "dose": "3 × 10 each leg",
+     "steps": [
+      "Stand on a low step on the sore leg.",
+      "Slowly lower the other heel to the floor, knee tracking over your middle toe.",
+      "Push back up."
+     ],
+     "refs": [
+      "29034800",
+      "39401870"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-patellofemoral-knee-pain/",
+     "mediaTitle": "NHS inform: patellofemoral knee pain exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "pf-squat",
+     "name": "Loaded squat / split squat",
+     "phase": "return",
+     "dose": "3 × 8–10, 3 days a week",
+     "steps": [
+      "Squat to a depth that is comfortable, adding depth then load over weeks."
+     ],
+     "refs": [
+      "39401870"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-patellofemoral-knee-pain/",
+     "mediaTitle": "NHS inform: patellofemoral knee pain exercises",
+     "symbol": "figure.strengthtraining.functional"
+    }
+   ]
+  },
+  {
+   "id": "knee_outside",
+   "name": "Outside of knee / IT band",
+   "symbol": "figure.walk",
+   "pubmed": "iliotibial band syndrome AND (runners OR running) AND (treatment OR exercise)",
+   "summary": "Pain on the outside of the knee, often after a set distance into a run. The best-supported treatment is hip abductor strengthening.",
+   "run_rule": "Shorten runs to below the point where pain starts. Avoid downhills and running on cambered roads for a while.",
+   "run_refs": [
+    "39247485"
+   ],
+   "exercises": [
+    {
+     "id": "it-abd",
+     "name": "Side-lying hip abduction",
+     "phase": "calm",
+     "dose": "3 × 15 each side, daily",
+     "steps": [
+      "Lie on your side, bottom knee bent.",
+      "Lift the top leg up and slightly back, toes forward.",
+      "Lower over 2 s."
+     ],
+     "refs": [
+      "10959926",
+      "39247485"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-hip-problems/",
+     "mediaTitle": "NHS inform: hip exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "it-sideplank",
+     "name": "Side plank",
+     "phase": "build",
+     "dose": "3 × 20–40 s each side",
+     "steps": [
+      "On your elbow and the side of your knees (easier) or feet (harder).",
+      "Keep hips lifted in a straight line."
+     ],
+     "refs": [
+      "39247485"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-hip-problems/",
+     "mediaTitle": "NHS inform: hip exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "it-band",
+     "name": "Lateral band walk",
+     "phase": "build",
+     "dose": "3 × 12 steps each way",
+     "steps": [
+      "Band around ankles or above knees, half squat.",
+      "Step sideways without letting the knees fall in."
+     ],
+     "refs": [
+      "39247485"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-hip-problems/",
+     "mediaTitle": "NHS inform: hip exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "it-slsquat",
+     "name": "Single-leg squat to box",
+     "phase": "return",
+     "dose": "3 × 8 each leg",
+     "steps": [
+      "Stand on one leg in front of a box or bench.",
+      "Sit back to touch it, keeping the knee in line with your toes."
+     ],
+     "refs": [
+      "39247485"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-hip-problems/",
+     "mediaTitle": "NHS inform: hip exercises",
+     "symbol": "figure.strengthtraining.functional"
+    }
+   ]
+  },
+  {
+   "id": "hamstring",
+   "name": "Hamstring",
+   "symbol": "figure.walk",
+   "pubmed": "hamstring (strain OR injury) AND (rehabilitation OR exercise) AND (running OR runners)",
+   "summary": "Tightness or pain at the back of the thigh. Start with holds, then build strength. In a trial, a rehab programme built on lengthening exercises got players back about three weeks sooner than conventional exercises. Nordic curls are strongly supported for preventing hamstring injuries once you're pain-free.",
+   "run_rule": "Keep runs easy and avoid strides or fast work until bridges and leg curls are pain-free.",
+   "run_refs": [
+    "23536466",
+    "30808663"
+   ],
+   "exercises": [
+    {
+     "id": "hs-iso",
+     "name": "Bridge hold",
+     "phase": "calm",
+     "dose": "5 × 30 s",
+     "steps": [
+      "Lie on your back, heels on the floor, knees bent about 90°.",
+      "Lift hips and hold."
+     ],
+     "refs": [
+      "23536466"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-thigh-problems/",
+     "mediaTitle": "NHS inform: thigh exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "hs-slbridge",
+     "name": "Single-leg bridge",
+     "phase": "build",
+     "dose": "3 × 10 each leg",
+     "steps": [
+      "As a bridge, but with one foot lifted.",
+      "Keep the hips level."
+     ],
+     "refs": [
+      "23536466"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-thigh-problems/",
+     "mediaTitle": "NHS inform: thigh exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "hs-rdl",
+     "name": "Romanian deadlift",
+     "phase": "build",
+     "dose": "3 × 8, 2–3 days a week",
+     "steps": [
+      "Dumbbells or barbell, slight knee bend.",
+      "Hinge at the hips until you feel the hamstrings stretch, then stand up."
+     ],
+     "refs": [
+      "23536466"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-thigh-problems/",
+     "mediaTitle": "NHS inform: thigh exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "hs-nordic",
+     "name": "Nordic hamstring curl",
+     "phase": "return",
+     "dose": "2–3 × 5, twice a week (prevention)",
+     "steps": [
+      "Kneel with ankles held down.",
+      "Lower your body forward as slowly as you can, catch yourself with your hands.",
+      "Push back up."
+     ],
+     "refs": [
+      "30808663"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-thigh-problems/",
+     "mediaTitle": "NHS inform: thigh exercises",
+     "symbol": "figure.strengthtraining.functional"
+    }
+   ]
+  },
+  {
+   "id": "hip",
+   "name": "Hip / glute",
+   "symbol": "figure.walk",
+   "pubmed": "(gluteal tendinopathy OR greater trochanteric pain syndrome OR hip pain) AND (runners OR exercise)",
+   "summary": "Pain on the outside of the hip or in the glute, often gluteal tendinopathy. In a trial, load-management advice plus hip strengthening beat both a steroid injection and waiting. Avoid positions that compress the side of the hip, like crossing your legs or lying on that side.",
+   "run_rule": "Run on flat routes with a slightly shorter stride. Ease off if pain lingers into the next day.",
+   "run_refs": [
+    "29720374"
+   ],
+   "exercises": [
+    {
+     "id": "hip-iso",
+     "name": "Standing hip abduction hold",
+     "phase": "calm",
+     "dose": "5 × 30 s",
+     "steps": [
+      "Stand side-on to a wall, press the outside of the leg nearest the wall into it.",
+      "Hold without hitching your hip."
+     ],
+     "refs": [
+      "29720374"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-greater-trochanteric-pain-syndrome/",
+     "mediaTitle": "NHS inform: greater trochanteric pain exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "hip-bridge",
+     "name": "Glute bridge",
+     "phase": "build",
+     "dose": "3 × 12",
+     "steps": [
+      "Lie on your back, knees bent, lift hips, hold 2 s."
+     ],
+     "refs": [
+      "29720374"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-greater-trochanteric-pain-syndrome/",
+     "mediaTitle": "NHS inform: greater trochanteric pain exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "hip-sideplank",
+     "name": "Side plank",
+     "phase": "build",
+     "dose": "3 × 20–40 s each side",
+     "steps": [
+      "On your elbow and knees or feet, hips lifted."
+     ],
+     "refs": [
+      "29720374"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-hip-problems/",
+     "mediaTitle": "NHS inform: hip exercises",
+     "symbol": "figure.strengthtraining.functional"
+    }
+   ]
+  },
+  {
+   "id": "foot",
+   "name": "Foot / heel",
+   "symbol": "shoeprints.fill",
+   "pubmed": "plantar fasciitis OR plantar heel pain AND (exercise OR strength training)",
+   "summary": "Heel pain that is worst with the first steps in the morning is usually plantar fasciitis. Heavy, slow heel raises with the toes lifted beat stretching alone at 3 months.",
+   "run_rule": "Keep runs short and on soft surfaces while it's sore. Supportive shoes or inserts help day to day.",
+   "run_refs": [
+    "25145882"
+   ],
+   "exercises": [
+    {
+     "id": "pf-rathleff",
+     "name": "Heel raise with towel under toes",
+     "phase": "build",
+     "dose": "Every other day: 3 × 12 (weeks 1–2), then 4 × 10 with a backpack, then 5 × 8 heavier",
+     "steps": [
+      "Stand on one foot on a step, rolled towel under your toes.",
+      "3 s up, 2 s pause at the top, 3 s down.",
+      "Add weight in a backpack as it gets easy."
+     ],
+     "refs": [
+      "25145882"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-foot-conditions",
+     "mediaTitle": "NHS inform: foot exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "pf-calfstretch",
+     "name": "Calf and plantar fascia stretch",
+     "phase": "calm",
+     "dose": "3 × 30 s, a few times a day",
+     "steps": [
+      "Before getting up, pull your toes back toward your shin with one hand.",
+      "Hold until you feel the stretch along the arch."
+     ],
+     "refs": [
+      "25145882"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/leg-and-foot-problems-and-conditions/exercises-for-foot-conditions",
+     "mediaTitle": "NHS inform: foot exercises",
+     "symbol": "figure.strengthtraining.functional"
+    }
+   ]
+  },
+  {
+   "id": "back",
+   "name": "Lower back",
+   "symbol": "figure.walk",
+   "pubmed": "low back pain AND exercise therapy AND (systematic review OR randomized)",
+   "summary": "Most low back pain settles with movement. Exercise helps pain, and no single type is clearly best, so pick ones you'll keep doing.",
+   "run_rule": "Easy running and walking are fine if pain doesn't get worse. Leg numbness, weakness, or problems with bladder or bowel need urgent care.",
+   "run_refs": [
+    "34580864"
+   ],
+   "redflag": "Numbness in the groin, leg weakness, or new bladder or bowel problems: get urgent medical care.",
+   "redflag_refs": [],
+   "exercises": [
+    {
+     "id": "bk-catcamel",
+     "name": "Cat–camel",
+     "phase": "calm",
+     "dose": "2 × 10 slow reps",
+     "steps": [
+      "On hands and knees, round your back, then let it dip gently."
+     ],
+     "refs": [
+      "34580864"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/neck-and-back-problems-and-conditions/exercises-for-back-pain/",
+     "mediaTitle": "NHS inform: back pain exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "bk-birddog",
+     "name": "Bird dog",
+     "phase": "build",
+     "dose": "3 × 8 each side",
+     "steps": [
+      "On hands and knees, reach one arm and the opposite leg out.",
+      "Hold 3 s without the hips twisting."
+     ],
+     "refs": [
+      "34580864"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/neck-and-back-problems-and-conditions/exercises-for-back-pain/",
+     "mediaTitle": "NHS inform: back pain exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "bk-bridge",
+     "name": "Glute bridge",
+     "phase": "build",
+     "dose": "3 × 12",
+     "steps": [
+      "Lie on your back, knees bent, lift hips, hold 2 s."
+     ],
+     "refs": [
+      "34580864"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/neck-and-back-problems-and-conditions/exercises-for-back-pain/",
+     "mediaTitle": "NHS inform: back pain exercises",
+     "symbol": "figure.strengthtraining.functional"
+    },
+    {
+     "id": "bk-sideplank",
+     "name": "Side plank",
+     "phase": "return",
+     "dose": "3 × 20–40 s each side",
+     "steps": [
+      "On your elbow and knees or feet, hips lifted."
+     ],
+     "refs": [
+      "34580864"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/neck-and-back-problems-and-conditions/exercises-for-back-pain/",
+     "mediaTitle": "NHS inform: back pain exercises",
+     "symbol": "figure.strengthtraining.functional"
+    }
+   ]
+  },
+  {
+   "id": "general",
+   "name": "General soreness",
+   "symbol": "figure.cooldown",
+   "pubmed": "(delayed onset muscle soreness OR exercise-induced muscle damage) AND recovery",
+   "summary": "Normal post-training soreness. Massage is the best-supported option for soreness and fatigue. Compression, active recovery, cold water and cryotherapy help a little too.",
+   "run_rule": "Run easy or take a rest day. Soreness that is sharp, in one spot, or still getting worse after 3 days is not normal soreness, so log it as Pain.",
+   "run_refs": [
+    "29755363"
+   ],
+   "exercises": [
+    {
+     "id": "gen-active",
+     "name": "Easy active recovery",
+     "phase": "calm",
+     "dose": "20–30 min very easy bike, walk or swim",
+     "steps": [
+      "Conversational effort, heart rate well below your easy-run range."
+     ],
+     "refs": [
+      "29755363"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/how-to-reduce-your-risk-of-injury-from-exercise-or-physical-activity/",
+     "mediaTitle": "NHS inform: reducing injury risk",
+     "symbol": "figure.outdoor.cycle"
+    },
+    {
+     "id": "gen-massage",
+     "name": "Massage or foam rolling",
+     "phase": "calm",
+     "dose": "10–15 min on sore areas",
+     "steps": [
+      "Slow passes over the sore muscles, moderate pressure."
+     ],
+     "refs": [
+      "29755363"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/how-to-reduce-your-risk-of-injury-from-exercise-or-physical-activity/",
+     "mediaTitle": "NHS inform: reducing injury risk",
+     "symbol": "hand.raised"
+    },
+    {
+     "id": "gen-cwi",
+     "name": "Cold water immersion",
+     "phase": "calm",
+     "dose": "10–15 min at 10–15 °C after hard sessions",
+     "steps": [
+      "Skip it after strength sessions if you're trying to build muscle."
+     ],
+     "refs": [
+      "39294614",
+      "29755363",
+      "26174323"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/how-to-reduce-your-risk-of-injury-from-exercise-or-physical-activity/",
+     "mediaTitle": "NHS inform: reducing injury risk",
+     "symbol": "drop.fill"
+    },
+    {
+     "id": "gen-compress",
+     "name": "Compression garments",
+     "phase": "calm",
+     "dose": "Wear for a few hours after long runs",
+     "steps": [
+      "Calf sleeves or tights."
+     ],
+     "refs": [
+      "29755363"
+     ],
+     "media": "https://www.nhsinform.scot/illnesses-and-conditions/muscle-bone-and-joints/how-to-reduce-your-risk-of-injury-from-exercise-or-physical-activity/",
+     "mediaTitle": "NHS inform: reducing injury risk",
+     "symbol": "figure.stand"
+    }
+   ]
+  }
+ ],
+ "disclaimer": "General, research-based guidance, not a diagnosis. See a physiotherapist or doctor if pain is severe, getting worse, or not improving after 2 weeks."
+}

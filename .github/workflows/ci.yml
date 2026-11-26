@@ -1,0 +1,57 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-and-test:
+    name: Build and test
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for project
+        id: proj
+        run: if [ -f project.yml ]; then echo "has=true" >> $GITHUB_OUTPUT; else echo "No project.yml yet, skipping"; fi
+      - name: Install XcodeGen
+        if: steps.proj.outputs.has == 'true'
+        run: brew install xcodegen
+      - name: Generate project
+        if: steps.proj.outputs.has == 'true'
+        run: TEAM_ID="" xcodegen generate
+      - name: Build app and widgets (unsigned)
+        if: steps.proj.outputs.has == 'true'
+        run: |
+          set -o pipefail
+          xcodebuild -project HealthFitness.xcodeproj -scheme HealthFitness -configuration Debug \
+            -destination 'platform=macOS' -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY="" build 2>&1 | tee build.log | grep -E "error:|warning:|BUILD" || true
+          grep -q "BUILD SUCCEEDED" build.log
+      - name: Run tests
+        if: steps.proj.outputs.has == 'true'
+        run: |
+          set -o pipefail
+          xcodebuild -project HealthFitness.xcodeproj -scheme HealthFitness \
+            -destination 'platform=macOS' -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY="" test 2>&1 | tee test.log | grep -E "error:|Test Case.*(passed|failed)|TEST (SUCCEEDED|FAILED)|Executed" || true
+          grep -q "TEST SUCCEEDED" test.log
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs
+          path: "*.log"
+
+  content-qa:
+    name: Content QA (citations and links)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate recovery library
+        run: |
+          if [ -f App/Resources/recovery_library.json ]; then python3 scripts/qa_library.py App/Resources/recovery_library.json; else echo "No library yet"; fi

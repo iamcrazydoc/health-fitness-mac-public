@@ -4,6 +4,10 @@ All notable changes to this app. Format: [Keep a Changelog](https://keepachangel
 
 ## [Unreleased]
 
+## [1.9.0] - 2026-11-26
+### Added
+- Claude tab (#21). **Open in Claude** buttons (Insights, Make or change my plan, Recovery help, Make my dashboard) copy an ask and a summary of your data and open claude.ai, where your own plan and connectors can change the calendar plan. Optional **Chat here** with your own Anthropic API key (Settings > Claude), with **Continue in Claude** to apply plan changes there.
+
 ## [1.8.0] - 2026-11-26
 ### Changed
 - Nothing personal is built in any more (#19). The goal time, race date and name and an optional dashboard link move to a new Settings > Goal section; the home city has no default (set it in Settings > Home to get the weather). Dates follow the Mac's time zone.

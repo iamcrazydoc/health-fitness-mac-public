@@ -404,3 +404,67 @@ final class TrainingTests: XCTestCase {
         XCTAssertEqual(a.due, 2)
     }
 }
+
+final class ClaudeTests: XCTestCase {
+    private func derived() -> Derived {
+        var s = Snapshot()
+        let today = Fmt.key(Date())
+        s.runs = [Run(id: 1, name: "Morning Run", date: TrainingMath.add(today, -2), distanceM: 8046.72, movingS: 3000, avgHR: 150, outdoor: true),
+                  Run(id: 2, name: "Old Run", date: TrainingMath.add(today, -60), distanceM: 5000, movingS: 1800, avgHR: nil, outdoor: true)]
+        s.plan = [PlannedRun(id: "p", date: TrainingMath.add(today, 3), title: "🏃 Long run · 6 mi", notes: "Easy\nconversational", miles: 6)]
+        s.predictedHalfS = 7400
+        return Derived(snap: s, profile: Profile(goalHalfSeconds: 7199, raceDate: TrainingMath.add(today, 30), raceName: "Spring Half"))
+    }
+
+    func testSummaryHasGoalRunsAndPlan() {
+        let home = HomeSettings(city: "Columbus, OH", airports: ["CMH"], latitude: 39.96, longitude: -83.0)
+        let s = ClaudeContext.summary(derived(), bodyNotes: ["2026-12-01: Calf, tight 2/5"], home: home)
+        XCTAssertTrue(s.contains("Half marathon goal: 1:59:59"))
+        XCTAssertTrue(s.contains("Spring Half on"))
+        XCTAssertTrue(s.contains("(30 days away)"))
+        XCTAssertTrue(s.contains("5.0 mi at 10:00 /mi, avg HR 150"))
+        XCTAssertFalse(s.contains("Old Run"), "only the last 6 weeks")
+        XCTAssertTrue(s.contains("🏃 Long run · 6 mi (Easy; conversational)"))
+        XCTAssertTrue(s.contains("Home: Columbus, OH (airports CMH)"))
+        XCTAssertTrue(s.contains("Calf, tight 2/5"))
+        XCTAssertFalse(s.contains("Watch, last 7 days"), "no watch section without athletedata")
+    }
+
+    func testSummaryWithNothingSet() {
+        let s = ClaudeContext.summary(Derived(snap: Snapshot(), profile: .empty), home: .unset)
+        XCTAssertTrue(s.contains("- Not set yet"))
+        XCTAssertTrue(s.contains("No planned runs"))
+    }
+
+    func testHandoffText() {
+        let t = ClaudeContext.handoff(.plan, question: "  Can I run 3 days a week? ", summary: "DATA")
+        XCTAssertTrue(t.hasPrefix(ClaudeAsk.plan.prompt))
+        XCTAssertTrue(t.contains("My question: Can I run 3 days a week?"))
+        XCTAssertTrue(t.hasSuffix("DATA"))
+        XCTAssertEqual(ClaudeContext.handoff(nil, question: "", summary: "DATA"), "DATA")
+        XCTAssertTrue(ClaudeAsk.dashboard.prompt.contains("🏃"))
+    }
+
+    func testChatRequestBody() throws {
+        let body = ClaudeChat.body(context: "CTX", turns: [.user("Hi")])
+        XCTAssertEqual(body["model"] as? String, "claude-opus-5-5")
+        XCTAssertEqual(body["fallbacks"] as? String, "default")
+        XCTAssertEqual((body["output_config"] as? [String: Any])?["effort"] as? String, "medium")
+        let system = try XCTUnwrap((body["system"] as? [[String: Any]])?.first)
+        XCTAssertTrue((system["text"] as? String ?? "").contains("<runner_data>\nCTX\n</runner_data>"))
+        let msgs = try XCTUnwrap(body["messages"] as? [[String: Any]])
+        XCTAssertEqual(msgs.first?["role"] as? String, "user")
+        XCTAssertNoThrow(try JSONSerialization.data(withJSONObject: body))
+    }
+
+    func testChatResponseParsing() throws {
+        let ok = #"{"content":[{"type":"thinking","thinking":"","signature":"s"},{"type":"text","text":"Run easy."}],"stop_reason":"end_turn"}"#
+        let turn = try ClaudeChat.parse(Data(ok.utf8))
+        XCTAssertEqual(turn.role, "assistant")
+        XCTAssertEqual(turn.text, "Run easy.")
+        XCTAssertEqual(turn.content.count, 2, "thinking blocks are kept to send back")
+        let refused = #"{"content":[],"stop_reason":"refusal","stop_details":{"type":"refusal","explanation":"no"}}"#
+        XCTAssertThrowsError(try ClaudeChat.parse(Data(refused.utf8)))
+        XCTAssertThrowsError(try ClaudeChat.parse(Data("nope".utf8)))
+    }
+}

@@ -19,6 +19,8 @@ struct SettingsView: View {
     @State private var raceName = Profile.current.raceName ?? ""
     @State private var dashboardLink = Profile.current.dashboardLink ?? ""
     @State private var goalStatus = ""
+    @State private var anthropicKey = Keychain.get(.anthropicKey) ?? ""
+    @State private var claudeStatus = ""
     @State private var saved = ""
 
     var body: some View {
@@ -111,6 +113,19 @@ struct SettingsView: View {
                 HStack {
                     Button("Save goal") { saveGoal() }
                     Text(goalStatus).font(.callout).foregroundStyle(.secondary)
+                }
+            }
+            Section("Claude") {
+                Text("The Claude tab's Open in Claude buttons need no setup. To chat inside the app, paste an Anthropic API key. It stays in your keychain, and usage is billed to it by Anthropic.")
+                    .font(.callout).foregroundStyle(.secondary)
+                SecureField("Anthropic API key", text: $anthropicKey)
+                HStack {
+                    Button("Save key") {
+                        Keychain.set(anthropicKey.trimmingCharacters(in: .whitespacesAndNewlines), for: .anthropicKey)
+                        claudeStatus = anthropicKey.isEmpty ? "Removed." : "Saved."
+                    }
+                    Link("Get a key", destination: URL(string: "https://console.anthropic.com/settings/keys")!)
+                    Text(claudeStatus).font(.callout).foregroundStyle(.secondary)
                 }
             }
             Section("Mac Calendar") {

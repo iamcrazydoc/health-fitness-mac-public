@@ -30,6 +30,18 @@ nothing is built into the app.
 Set your half marathon goal time, race date and race name in Settings > Goal. They drive the goal
 card, the Half goal widget and the race countdown. Until they're set, the app shows hints instead.
 
+## Claude tab
+
+- **Open in Claude**: Insights, Make or change my plan, Recovery help and Make my dashboard. Each
+  copies an ask plus a summary of your data (goal, last 6 weeks of runs, the next 4 weeks of plan,
+  trips, watch data and check-ins) and opens claude.ai; paste with ⌘V. It uses your own Claude plan
+  and connectors, so with Claude's Google Calendar connector it can add or move the 🏃/🏁 runs this
+  app reads. **Make my dashboard** starts a live dashboard artifact from Strava, your watch and
+  your calendar.
+- **Chat here** (optional): add an Anthropic API key in Settings > Claude to chat inside the app.
+  The key stays in your keychain and usage is billed to it. The chat can't change your calendar;
+  **Continue in Claude** hands the conversation to claude.ai to make the changes.
+
 ## Recovery tab
 
 - **Check in** (top right): body part, how it feels (Tight, Sore, Pain, Injury, Better, Recovered),

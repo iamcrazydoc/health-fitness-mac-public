@@ -19,7 +19,7 @@ Copy into the PR's QA comment and mark each item ✅ pass, ❌ fail or n/a.
 - [ ] No credentials, tokens or personal data in code, logs, commits or test fixtures (no built-in home, goal, race date or plan)
 - [ ] Keys only read from and written to the keychain
 - [ ] Strava use is read only
-- [ ] Network calls only to: strava.com, api.open-meteo.com, athletedata, eutils.ncbi.nlm.nih.gov, Google sign-in and Calendar (accounts.google.com, oauth2.googleapis.com, www.googleapis.com), place search (geocoding-api.open-meteo.com), trusted media hosts
+- [ ] Network calls only to: strava.com, api.open-meteo.com, athletedata, eutils.ncbi.nlm.nih.gov, Google sign-in and Calendar (accounts.google.com, oauth2.googleapis.com, www.googleapis.com), place search (geocoding-api.open-meteo.com), Claude chat (api.anthropic.com, only with the user's own key), trusted media hosts
 - [ ] Google Calendar use is read only (calendar.events.readonly and calendar.calendarlist.readonly scopes)
 
 ## Health content

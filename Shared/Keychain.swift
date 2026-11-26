@@ -7,6 +7,7 @@ enum Keychain {
         case stravaClientID, stravaClientSecret, stravaAccess, stravaRefresh, stravaExpires
         case adpURL, adpKey
         case googleClientID, googleClientSecret, googleAccess, googleRefresh, googleExpires, googleCalendarID
+        case anthropicKey
     }
 
     static func set(_ value: String?, for key: Key) {

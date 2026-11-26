@@ -11,6 +11,7 @@ struct HealthFitnessApp: App {
                 ContentView().tabItem { Label("Overview", systemImage: "gauge.with.dots.needle.bottom.50percent") }
                 TrainingView().tabItem { Label("Training", systemImage: "calendar") }
                 RecoveryView().tabItem { Label("Recovery", systemImage: "cross.case") }
+                ClaudeView().tabItem { Label("Claude", systemImage: "sparkles") }
             }
                 .environmentObject(model)
                 .environmentObject(recovery)

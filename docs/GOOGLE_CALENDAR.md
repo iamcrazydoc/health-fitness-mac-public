@@ -63,13 +63,16 @@ The app reads every calendar on your Google account (holiday, sports, birthday a
 calendars are ignored for trips). If you connected before version 1.7.0, click **Reconnect
 Google** once so it may list your calendars.
 
-Trips are worked out from:
-- **Flights**: Gmail flight events, titles with "flight", airline flight numbers (UA 512) or
-  airport pairs (JFK → SFO). A flight leaving a home airport starts a trip; a flight back ends it.
+Only flights and hotel bookings count as trips:
+- **Flights**: Gmail flight events, titles with "flight" or airport pairs (JFK → SFO), and Gmail
+  events with an airline flight number (UA 512) that also mention the flight. A flight leaving a
+  home airport starts a trip; a flight back ends it.
 - **Hotels**: Gmail hotel reservations and titles with hotel words (hotel, inn, resort, suites,
-  Airbnb, major chains, "stay at"). The city comes from the address. Restaurant and ticket
-  reservations are ignored.
-- **Trips you add**: titles starting with ✈️ or 🧳, or with trip, travel or vacation.
+  Airbnb, major chains) or starting with 🏨. The city comes from the address.
+
+Online meetings (Zoom, Google Meet, Teams, Webex and similar links, or "meeting", "call",
+"webinar" in the title) are never trips, and neither are restaurant, ticket or car-rental
+reservations or events you title with trip, travel or vacation.
 
 Set your home city and airports in Settings > Home, so anything at home isn't counted. Put
 `run: treadmill` or `run: none` in an event's notes if you can't run outside there.

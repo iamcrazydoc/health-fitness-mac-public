@@ -271,13 +271,44 @@ final class TripTests: XCTestCase {
         XCTAssertTrue(trips.isEmpty, "\(trips)")
     }
 
-    func testTripWordsStillWork() throws {
+    func testOnlyFlightsAndHotelsMakeTrips() {
+        let zoomNotes = "Jennifer is inviting you to a scheduled Zoom meeting. Join: https://example.zoom.us/j/123 Meeting ID: 123"
         let trips = TripParser.trips(from: [
-            ev("Family vacation", "2027-02-20", "2027-02-28", notes: "Running: none", location: "Goa, India"),
-            ev("✈️ Trip to Denver", "2027-01-14", "2027-01-17"),
+            // Online meetings, however they look, are never trips.
+            ev("Rural weekly Meeting", "2027-01-05", notes: zoomNotes, location: "https://example.zoom.us/j/123"),
+            ev("Zoom: Q4 review", "2027-01-06", notes: zoomNotes, gmail: true),
+            ev("Team sync", "2027-01-07", location: "https://meet.google.com/abc-defg-hij"),
+            ev("Budget call", "2027-01-08", notes: "Microsoft Teams meeting https://teams.microsoft.com/l/meetup-join/1"),
+            ev("Weekly check in", "2027-01-09"),
+            ev("Hilton Denver webinar", "2027-01-10", gmail: true),
+            // Named trips without a flight or hotel booking no longer count.
+            ev("Family vacation", "2027-02-20", "2027-02-28", location: "Goa, India"),
+            ev("🧳 Trip to Denver", "2027-01-14", "2027-01-17"),
+            ev("Travel day", "2027-01-18"),
+            // A Gmail event with something shaped like a flight number but nothing about flying.
+            ev("R01 grant deadline", "2027-01-19", notes: "Submit by 5 PM", gmail: true),
         ], home: home)
-        XCTAssertEqual(trips.map(\.place), ["Denver", "Goa"])
-        XCTAssertEqual(trips[1].mode, Trip.Mode.none)
+        XCTAssertTrue(trips.isEmpty, "\(trips)")
+    }
+
+    func testFlightsAndHotelsStillMakeTrips() {
+        let trips = TripParser.trips(from: [
+            ev("UA 512", "2027-03-01", notes: "United Airlines flight from CMH to DEN. Boarding 6:40 AM", gmail: true),
+            ev("🏨 Hilton Denver Downtown", "2027-03-01", "2027-03-03", location: "1701 California St, Denver, CO 80202, USA"),
+            ev("✈️ DEN → CMH", "2027-03-04"),
+        ], home: home)
+        XCTAssertEqual(trips.count, 1, "\(trips)")
+        XCTAssertEqual(trips.first?.start, "2027-03-01")
+        XCTAssertEqual(trips.first?.end, "2027-03-04")
+        XCTAssertEqual(trips.first?.place, "Denver")
+        XCTAssertEqual(trips.first?.basis, ["flight", "hotel"])
+    }
+
+    func testMeetingDetection() {
+        XCTAssertTrue(TripParser.isMeeting(ev("Rural weekly Meeting", "2027-01-05")))
+        XCTAssertTrue(TripParser.isMeeting(ev("Planning", "2027-01-05", location: "https://us02web.zoom.us/j/1")))
+        XCTAssertFalse(TripParser.isMeeting(ev("Flight to Denver (UA 512)", "2027-01-05", gmail: true)))
+        XCTAssertFalse(TripParser.isMeeting(ev("Hampton Inn Denver", "2027-01-05", notes: "Check-in 3 PM", gmail: true)))
     }
 
     func testGoogleParsingKeepsGmailAndExclusiveEnd() throws {

@@ -25,7 +25,7 @@ struct Trip: Codable, Identifiable, Hashable {
 
 /// One travel-related calendar event, classified. The dashboard's cal_trips loader uses the same rules.
 struct TravelItem: Equatable {
-    enum Kind: String { case flight, hotel, trip }
+    enum Kind: String { case flight, hotel }
 
     let kind: Kind
     let start: String
@@ -33,26 +33,34 @@ struct TravelItem: Equatable {
     /// Flights: departure and arrival as airport codes or city names, when the event says.
     var from: String = ""
     var to: String = ""
-    /// Hotels and trips: the city or name.
+    /// Hotels: the city or name.
     var place: String = ""
     var mode: Trip.Mode? = nil
     var title: String = ""
 }
 
-/// Finds flights, hotel stays and trips in calendar events, then joins them into trips using home.
+/// Finds flights and hotel stays in calendar events, then joins them into trips using home.
+/// Only flights and hotel bookings make a trip; online meetings never do.
 enum TripParser {
-    static let tripWords = ["trip", "travel", "vacation"]
     static let hotelWords = ["hotel", "inn", "resort", "suites", "lodge", "motel", "hostel", "airbnb", "vrbo", "marriott", "hilton",
                              "hyatt", "sheraton", "westin", "hampton", "courtyard", "doubletree", "embassy suites", "residence inn",
-                             "four seasons", "ritz-carlton", "best western", "radisson", "wyndham", "ihg", "kimpton", "stay at",
-                             "check-in", "check in", "hotel reservation"]
+                             "four seasons", "ritz-carlton", "best western", "radisson", "wyndham", "ihg", "kimpton", "hotel reservation"]
+    /// Words that, next to a flight number in a Gmail event, show it really is a flight.
+    static let flightWords = ["flight", "airline", "airlines", "airways", "boarding", "departure", "depart", "arrival", "gate"]
+    /// Online meeting links and words: an event with any of these is never a trip.
+    static let meetingHosts = ["zoom.us", "zoom.com", "meet.google.com", "teams.microsoft.com", "teams.live.com", "webex.com",
+                               "gotomeeting.com", "goto.com", "whereby.com", "bluejeans.com", "chime.aws", "ringcentral.com",
+                               "skype.com", "facetime.apple.com", "meet.jit.si"]
+    static let meetingWords = ["zoom", "meeting", "meetings", "webinar", "google meet", "microsoft teams", "teams meeting", "webex", "conference call",
+                               "video call", "call", "standup", "stand-up", "huddle", "1:1", "one-on-one", "seminar", "grand rounds",
+                               "journal club", "lecture", "office hours"]
     static let notHotel = ["restaurant", "table for", "dinner", "lunch", "brunch", "opentable", "resy", "ticket", "concert", "game",
                            "car rental", "rental car", "hertz", "avis", "enterprise", "budget", "uber", "lyft", "train", "amtrak", "bus"]
 
     // MARK: Classify one event
 
     static func classify(_ e: CalEvent) -> TravelItem? {
-        if e.travelIgnored || PlanParser.isPlanTitle(e.title) { return nil }
+        if e.travelIgnored || PlanParser.isPlanTitle(e.title) || isMeeting(e) { return nil }
         let title = e.title
         let low = (title + " " + e.notes).lowercased()
         if isFlight(e) {
@@ -64,11 +72,14 @@ enum TripParser {
             // A hotel event that is only the check-in or check-out day still counts as that day.
             return TravelItem(kind: .hotel, start: e.date, end: max(e.date, e.endDate), place: place, mode: mode(in: e.notes), title: title)
         }
-        if e.fromGmail { return nil }   // restaurant, tickets, car rental and the like
-        if title.hasPrefix("🧳") || title.hasPrefix("✈") || hasWord(title.lowercased(), tripWords) {
-            return TravelItem(kind: .trip, start: e.date, end: max(e.date, e.endDate), place: tripPlace(e), mode: mode(in: e.notes), title: title)
-        }
-        return nil
+        return nil   // anything else (trips you name, restaurants, tickets, car rentals) isn't a booking we count
+    }
+
+    /// An online meeting: a video link anywhere in the event, or a meeting word in the title.
+    static func isMeeting(_ e: CalEvent) -> Bool {
+        let all = (e.title + " " + e.location + " " + e.notes).lowercased()
+        if meetingHosts.contains(where: { all.contains($0) }) { return true }
+        return hasWord(e.title.lowercased(), meetingWords, whole: true)
     }
 
     /// `whole`: the word must end there too ("inn", not "inner"); otherwise it only has to start a word ("travelling").
@@ -85,11 +96,12 @@ enum TripParser {
 
     static func isFlight(_ e: CalEvent) -> Bool {
         let t = e.title
-        if t.hasPrefix("✈") && hasWord(t.lowercased(), ["flight"]) { return true }
         if hasWord(t.lowercased(), ["flight"]) { return true }
         if t.range(of: airportPair, options: .regularExpression) != nil { return true }
+        // Gmail flight events carry the flight number; insist the event also talks about flying.
         if e.fromGmail, t.range(of: flightNumber, options: .regularExpression) != nil,
-           !hasWord(t.lowercased(), hotelWords, whole: true) { return true }
+           !hasWord(t.lowercased(), hotelWords, whole: true),
+           hasWord((t + " " + e.notes).lowercased(), flightWords, whole: true) { return true }
         return false
     }
 
@@ -144,17 +156,6 @@ enum TripParser {
         return t.isEmpty ? nil : t
     }
 
-    /// "✈️ Trip to Denver" -> "Denver"; falls back to the event's location, then the title.
-    static func tripPlace(_ e: CalEvent) -> String {
-        let t = e.title.replacingOccurrences(of: #"^[^\p{L}\p{N}]+"#, with: "", options: .regularExpression)
-        if let m = t.firstMatch(of: #/(?i)\b(?:to|in)\s+(.+)$/#) {
-            let p = String(m.1).trimmingCharacters(in: .whitespaces)
-            if !p.isEmpty { return p }
-        }
-        if let c = city(fromAddress: e.location) { return c }
-        return t.trimmingCharacters(in: .whitespaces)
-    }
-
     static func mode(in notes: String) -> Trip.Mode? {
         let n = notes.lowercased()
         guard let m = n.firstMatch(of: #/run(?:ning)?\s*:\s*(none|no|treadmill|outdoor|outside)\b/#) else { return nil }
@@ -171,7 +172,7 @@ enum TripParser {
         build(events.compactMap(classify), home: home)
     }
 
-    /// Flights from home open a trip and flights back home close it; hotels and trips away from home
+    /// Flights from home open a trip and flights back home close it; hotels away from home
     /// join the trip they touch or make their own. Anything at home is ignored.
     static func build(_ items: [TravelItem], home: HomeSettings) -> [Trip] {
         struct Draft { var start: String; var end: String; var place: String; var mode: Trip.Mode?; var basis: [String] }

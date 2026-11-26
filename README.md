@@ -81,9 +81,9 @@ The app lands in `~/Applications/Health and Fitness.app` and opens.
 
 ### Trips and home
 Set your home city and airports in Settings > Home. The app then finds trips in all your
-calendars: flights (Gmail flight events, flight numbers, JFK → SFO), hotel stays (Gmail
-reservations and hotel names, city from the address), and events you title with ✈️, 🧳, trip,
-travel or vacation. A flight from home starts a trip and a flight home ends it. Add `run: treadmill`
+calendars, from flights (Gmail flight events, "Flight to …", JFK → SFO) and hotel bookings (Gmail
+reservations and hotel names, city from the address) only. Online meetings such as Zoom calls are
+never trips. A flight from home starts a trip and a flight home ends it. Add `run: treadmill`
 or `run: none` to an event's notes if you can't run outside. The weather follows your home city.
 
 ## Widgets

@@ -4,6 +4,10 @@ All notable changes to this app. Format: [Keep a Changelog](https://keepachangel
 
 ## [Unreleased]
 
+## [1.9.1] - 2026-11-26
+### Fixed
+- Online meetings (Zoom, Google Meet, Teams, Webex and the like) were shown as away trips (#23). Only flights and hotel bookings make a trip now. Events titled with trip, travel or vacation, or starting with 🧳, no longer do; a Gmail flight number counts only when the event also mentions the flight; "check in" or "stay at" alone no longer make a hotel.
+
 ## [1.9.0] - 2026-11-26
 ### Added
 - Claude tab (#21). **Open in Claude** buttons (Insights, Make or change my plan, Recovery help, Make my dashboard) copy an ask and a summary of your data and open claude.ai, where your own plan and connectors can change the calendar plan. Optional **Chat here** with your own Anthropic API key (Settings > Claude), with **Continue in Claude** to apply plan changes there.

@@ -271,7 +271,7 @@ struct TripsCard: View {
                             .font(.callout).foregroundStyle(.secondary)
                     }
                 }
-                Text("Add a trip as a calendar event starting with ✈️ (or with trip, travel, vacation or flight in the title). Put \"run: treadmill\" or \"run: none\" in its notes if you can't run outside.")
+                Text("Trips come from flights and hotel bookings in your calendars, like the ones Gmail adds or an event titled \"Flight to Denver\" or \"🏨 Hilton Denver\". Online meetings are never trips. Put \"run: treadmill\" or \"run: none\" in an event's notes if you can't run outside.")
                     .font(.caption).foregroundStyle(.tertiary).fixedSize(horizontal: false, vertical: true)
             }
         }
